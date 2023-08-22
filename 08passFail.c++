@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 enum enPassFail {pass = 1, fail = 0 };
 
 int readMark()
