@@ -3,38 +3,32 @@
 #include <string>
 using namespace std;
 
-void readNum(float &num1, float &num2, float &num3)
+void readNum(float &num1,float &num2)
 {
 	cout<<"enter  a \n";
 	cin>>num1;
     cout<<"enter b \n";
 	cin>>num2;
-	cout<<"enter c \n";
-	cin>>num3;
 }
 
-float circleAreaByATriangle(float num1,float num2, float num3)
+float circleAreafloatriangle(float num1,float num2)
 {
     float PI = 3.14;
-	float p;
-	p = (num1+ num2 +num3)/2;
-	float t ;
-	t = (num1 * num2 * num3) / (4 * sqrt(p * (p - num1) * (p - num2) * (p - num3)));
-    float area ;
-	area = PI * pow(t,2);
+	float area = PI * (pow(num2, 2) / 4) * ((2 * num1 - num2) / (2 * num1 + num2));
     return area;
 }
 
-void printtResult(float area)
+
+void prfloatResult(float area)
 {
-	cout<<"Circle Area circle Described Around an Arbitrary Triangle is : "<<area<<"\n";
+	cout<<"Circle Area Inscribed in an Isosceles Triangle is : "<<area<<"\n";
 }
 
 int main()
 {
-	float num1, num2, num3;
-	readNum(num1, num2,num3);
-	
-	printtResult(circleAreaByATriangle(num1, num2,num3));
+	float num1, num2;
+
+	readNum(num1, num2);
+	prfloatResult(circleAreafloatriangle(num1, num2));
 	return 0;
 }
