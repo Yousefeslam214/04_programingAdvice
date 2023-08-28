@@ -2,22 +2,28 @@
 #include <cmath>
 #include <string>
 using namespace std;
+/**
+ * readNum - take Circumference
+ *
+ * circleAreaAlongCircumference - Circle Area Along Circumference
+ *
+ * printResult - return result
+*/
 
-float readNum()
+float readNum()  
 {
-    int num1;
-	cout<<"enter L of circle \n";
-	cin>>num1;
-    return num1;
+    int L;
+	cout<<"enter a of circle \n";
+	cin>>L;
+	return (L);
 }
 
-float circleArea(int num1)
+float circleAreaAlongCircumference(float L)
 {
-    const float PI = 3.141;
-    float area = pow((num1),2)/(PI*4);
-    return area;
+	float PI = 3.14;
+	float area = (pow(L,2))/(4*PI);
+    return (area);
 }
-
 
 void printResult(float area)
 {
@@ -26,6 +32,6 @@ void printResult(float area)
 
 int main()
 {
-	printResult(circleArea(readNum()));
-	return 0;
+	printResult(circleAreaAlongCircumference(readNum()));
+	return (0);
 }
