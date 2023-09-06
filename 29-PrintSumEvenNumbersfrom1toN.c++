@@ -21,17 +21,17 @@ enOddorEven checkOddOrEven(int number)
 		return enOddorEven::even;
 }
 
-void printSumOddNumbersFrom1toN(int number)
+void printSumEvenNumbersFrom1toN(int number)
 {
 	int sum = 0;
 	for (int i = 1; i <= number; i++)
-		if (checkOddOrEven(i) == enOddorEven::odd)
+		if (checkOddOrEven(i) == enOddorEven::even)
 			sum += i;
 	cout << sum << endl;
 }
 
 int main()
 {
-	printSumOddNumbersFrom1toN(readNumber());
+	printSumEvenNumbersFrom1toN(readNumber());
 	return (0);
 }
