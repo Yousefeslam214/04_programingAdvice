@@ -15,7 +15,7 @@ int read(int from, int to)
 	return (Grade);
 }
 
-char getGradeLetter(int Grade)
+char commissionPercentage(int Grade)
 {
     if (Grade >= 90)
 		return 'A';
@@ -38,6 +38,6 @@ void output (char letter)
 
 int main()
 {
-	output(getGradeLetter(read(0,100)));
+	output(commissionPercentage(read(0,100)));
 	return (0);
 }
