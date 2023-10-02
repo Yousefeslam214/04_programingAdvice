@@ -2,8 +2,12 @@
 #include <cmath>
 #include <string>
 using namespace std;
+/*int f = 1;
+	for (int i = number; i >= 1; i--)
+		f *= i;
+	return f;*/
 
-int readPositiveNumber(string message) 
+int readNumber(string message) 
 {
 	int number;
 	do
@@ -18,10 +22,9 @@ int readPositiveNumber(string message)
 
 int factorial(int number)
 {
-	int f = 1;
-	for (int i = number; i >= 1; i--)
-		f *= i;
-	return f;
+	if (number == 0)
+		return 1;
+	return number * factorial(number - 1);
 }
 
 void printFactorial(int number, int f)
@@ -31,7 +34,7 @@ void printFactorial(int number, int f)
 
 int main()
 {
-	int num = readPositiveNumber("enter number to factorial");
+	int num = readNumber("enter number to factorial");
 	printFactorial(num, factorial(num));
 	return (0);
 }
