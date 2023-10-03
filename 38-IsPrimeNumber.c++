@@ -49,7 +49,6 @@ void printNumberType(int num)
 
 int main()
 {  
-	printNumberType(readPositiveNumber("enter number"));
-
+	printNumberType(readPositiveNumber("enter number")); 
 	return (0);
 }
