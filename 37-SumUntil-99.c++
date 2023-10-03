@@ -6,7 +6,7 @@ using namespace std;
 /*
 	Write a program to sum all numbers until you enter -99.
 */
-float readNumber(string Message)
+float readPositiveNumber(string Message)
 {
     float Num = 0;
 
@@ -16,13 +16,13 @@ float readNumber(string Message)
     return Num;
 }
 
-float sumNumbers()
+float primeNumber()
 {
 	int sum = 0, num = 0, count =1;
 
 	do
 	{
-		num = readNumber("please enter number " + to_string(count));
+		num = readPositiveNumber("please enter number " + to_string(count));
 
 		if (num != -99)
 		{
@@ -39,7 +39,7 @@ float sumNumbers()
 
 int main()
 {  
-	cout << sumNumbers() << endl;
+	cout << primeNumber() << endl;
 
 	return (0);
 }

@@ -13,7 +13,7 @@ enOperationTypes ReadOpTypes()
 	cin >> OT;
 	return (enOperationTypes)OT; 
 }
-float readNumber(string Message)
+float readPositiveNumber(string Message)
 {
     float Num = 0;
     cout << Message << endl;
@@ -40,8 +40,8 @@ float calculate(float num1, float num2, enOperationTypes opType)
 
 int main()
 {  
-	float num1 = readNumber("please enter first number ?");
-	float num2 = readNumber("please enter second number ?");
+	float num1 = readPositiveNumber("please enter first number ?");
+	float num2 = readPositiveNumber("please enter second number ?");
 
 	cout << endl << "Result = " << calculate(num1, num2, ReadOpTypes()) << endl;
 	return (0);
