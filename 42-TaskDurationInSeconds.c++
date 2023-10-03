@@ -9,7 +9,7 @@ using namespace std;
 	it on screen.
 */
 
-struct stDurationInSeconds
+struct stTaskDuration
 {
 	float daysToSeconds, hoursToSeconds, minutesToSeconds, seconds;
 };
@@ -24,9 +24,9 @@ float readPositiveNumber(string Message)
 		return readPositiveNumber("Number must be >0");
     return Num;
 }
-stDurationInSeconds readDuration()
+stTaskDuration readDuration()
 {
-	stDurationInSeconds durationInSeconds;
+	stTaskDuration durationInSeconds;
 	durationInSeconds.daysToSeconds = readPositiveNumber("please enter days");
 	durationInSeconds.hoursToSeconds = readPositiveNumber("please enter hours");
 	durationInSeconds.minutesToSeconds = readPositiveNumber("please enter minutes");
@@ -34,7 +34,7 @@ stDurationInSeconds readDuration()
 	return durationInSeconds;
 }
 
-float TaskDurationInSeconds(stDurationInSeconds durationInSeconds)
+float TaskDurationInSeconds(stTaskDuration durationInSeconds)
 {
 	int sum = 0;
 
