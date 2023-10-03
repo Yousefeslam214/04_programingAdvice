@@ -4,11 +4,15 @@
 using namespace std;
 
 /*
-	Write a program to read a
-	BillValue and add service fee and
-	sales tax to it, and print the
-	TotalBill on the screen.
+	Write a program to calculate the
+	task duration in seconds and print
+	it on screen.
 */
+
+struct stDurationInSeconds
+{
+	float daysToSeconds, hoursToSeconds, minutesToSeconds, seconds;
+};
 
 float readPositiveNumber(string Message)
 {
@@ -20,23 +24,35 @@ float readPositiveNumber(string Message)
 		return readPositiveNumber("Number must be >0");
     return Num;
 }
-
-float numberOfWeeksAndDays(float billValue)
+stDurationInSeconds readDuration()
 {
-	float totalBill;
-
-	totalBill = billValue * 1.1;
-	totalBill *= 1.16;
-	return totalBill;
+	stDurationInSeconds durationInSeconds;
+	durationInSeconds.daysToSeconds = readPositiveNumber("please enter days");
+	durationInSeconds.hoursToSeconds = readPositiveNumber("please enter hours");
+	durationInSeconds.minutesToSeconds = readPositiveNumber("please enter minutes");
+	durationInSeconds.seconds = readPositiveNumber("please enter seconds");
+	return durationInSeconds;
 }
+
+float TaskDurationInSeconds(stDurationInSeconds durationInSeconds)
+{
+	int sum = 0;
+
+	sum = durationInSeconds.daysToSeconds * 24 * 60 * 60;
+	sum += durationInSeconds.hoursToSeconds * 60 * 60;
+	sum += durationInSeconds.minutesToSeconds * 60;
+	sum += durationInSeconds.seconds;
+
+	return sum;
+} 
 
 void print(float num)
 {
-	cout << "the total bill is :"<<num << endl;
+	cout << "task duration in seconds : "<<num << endl;
 }
 
 int main()
 {  
-	print(numberOfWeeksAndDays(readPositiveNumber("enter cash paid")));
+	print(TaskDurationInSeconds(readDuration()));
 	return (0);
 }
