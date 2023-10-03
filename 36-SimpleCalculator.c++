@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 #include <string>
-#include "main.h"
 using namespace std;
 
 enum enOperationTypes {Add = '+', Subtract = '-', Multiply = '*', Divide = '/' };
@@ -14,7 +13,7 @@ enOperationTypes ReadOpTypes()
 	cin >> OT;
 	return (enOperationTypes)OT; 
 }
-float ReadNumber(string Message)
+float readNumber(string Message)
 {
     float Num = 0;
     cout << Message << endl;
@@ -41,8 +40,8 @@ float calculate(float num1, float num2, enOperationTypes opType)
 
 int main()
 {  
-	float num1 = ReadNumber("please enter first number ?");
-	float num2 = ReadNumber("please enter second number ?");
+	float num1 = readNumber("please enter first number ?");
+	float num2 = readNumber("please enter second number ?");
 
 	cout << endl << "Result = " << calculate(num1, num2, ReadOpTypes()) << endl;
 	return (0);
