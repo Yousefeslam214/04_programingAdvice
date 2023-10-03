@@ -21,7 +21,7 @@ float readPositiveNumber(string Message)
     return Num;
 }
 
-float totalBills(float billValue)
+float numberOfWeeksAndDays(float billValue)
 {
 	float totalBill;
 
@@ -37,6 +37,6 @@ void print(float num)
 
 int main()
 {  
-	print(totalBills(readPositiveNumber("enter cash paid")));
+	print(numberOfWeeksAndDays(readPositiveNumber("enter cash paid")));
 	return (0);
 }
