@@ -3,14 +3,14 @@
 #include <string>
 using namespace std;
 
-struct  stPiggyBankContent
+struct  stSimpleCalculator
 {
 	int penny, nickel, dime, quarter, doller;
 };
 
-stPiggyBankContent Read()
+stSimpleCalculator Read()
 {
-	stPiggyBankContent PiggyBankContent;
+	stSimpleCalculator PiggyBankContent;
 	cout << "Please enter a Total Pennies? " << endl;
 	cin >> PiggyBankContent.penny;
 	cout << "Please enter a Total Nickels? " << endl;
@@ -24,15 +24,15 @@ stPiggyBankContent Read()
 	return PiggyBankContent;
 }
 
-int calculateTotalPennies(stPiggyBankContent PiggyBankContent)
+int calculate(stSimpleCalculator PiggyBankContent)
 {
-    int totalPennies = PiggyBankContent.penny * 1 + PiggyBankContent.nickel * 5 + PiggyBankContent.dime * 10 + PiggyBankContent.quarter * 25 + PiggyBankContent.doller * 100;
+    int totalPennies = PiggyBankCont....ent.penny * 1 + PiggyBankContent.nickel * 5 + PiggyBankContent.dime * 10 + PiggyBankContent.quarter * 25 + PiggyBankContent.doller * 100;
 	return totalPennies;
 }
 
 int main()
-{
-	int totalPennies = calculateTotalPennies(Read());
+{  
+	int totalPennies = calculate(Read());
 	cout << endl << "total pennies = " << totalPennies << endl;
 	cout << endl << "total dollars = " << (float)totalPennies / 100 << endl;
 	return (0);
