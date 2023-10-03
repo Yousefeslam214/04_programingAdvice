@@ -12,31 +12,42 @@ using namespace std;
 
 float readNumberOfHours(string Message)
 {
-    float Num = 0;
+    float hours = 0;
 
     cout << Message << endl;
-    cin >> Num;
-	if (Num <= 0)
+    cin >> hours;
+	if (hours <= 0)
 		return readNumberOfHours("Number must be >0");
-    return Num;
+    return hours;
 }
 
-float totalBills(float billValue)
+float numberOfDays(float hours)
 {
-	float totalBill;
+	float Days;
 
-	totalBill = billValue * 1.1;
-	totalBill *= 1.16;
-	return totalBill;
+	Days = hours / 24;
+	return Days;
 }
 
-void print(float num)
+float numberOfWeeks(float Days)
 {
-	cout << "the total bill is :"<<num << endl;
+	float weeks;
+
+	weeks = Days / 7;
+	return weeks;
+}
+
+
+void print(float hours, float Days, float Weeks)
+{
+	cout << "the total Hours is :"<< hours << endl;
+	cout << "the total Days is :"<< Days << endl;
+	cout << "the total Weeks is :"<< Weeks << endl;
 }
 
 int main()
 {  
-	print(totalBills(readPositiveNumber("enter cash paid")));
+	float hours = readNumberOfHours("enter hours");
+	print(hours, numberOfDays(hours), numberOfWeeks(numberOfDays(hours)));
 	return (0);
 }
