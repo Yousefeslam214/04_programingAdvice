@@ -31,11 +31,11 @@ stTaskDuration readDuration(int totalSeconds)
 	const int secondsPerMinute = 60;
 	int reminder = 0;
 
-	taskDuration.numberOfDays =    (int)(totalSeconds / secondsPerDay);
+	taskDuration.numberOfDays =    (totalSeconds / secondsPerDay);
 	reminder = totalSeconds % secondsPerDay;
-	taskDuration.numberOfHours =   (int)(reminder / secondsPerHour);
+	taskDuration.numberOfHours =   (reminder / secondsPerHour);
 	reminder = totalSeconds % secondsPerHour;
-	taskDuration.numberOfMinutes = (int)(reminder / secondsPerMinute);
+	taskDuration.numberOfMinutes = (reminder / secondsPerMinute);
 	reminder = totalSeconds % secondsPerMinute;
 	taskDuration.numberOfSeconds = reminder;
 	return taskDuration;
