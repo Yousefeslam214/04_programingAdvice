@@ -19,7 +19,7 @@ void readPositiveNumber(string Message)
 		return readPositiveNumber("Wrong PIN");
 }
 
-void print ()
+void print()
 {
 	cout << "your balance is : 7500" << endl;
 }
